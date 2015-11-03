@@ -1,0 +1,106 @@
+a{
+	text-decoration: none;
+	color: $brand-color;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+
+
+/**
+ * Ola btn
+ */
+
+.ola-btn{
+    background: $brand-color;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    height: 50px;
+    padding-left: 2em;
+    padding-right: 2em;
+    width: 100%;
+    display: inline-block;
+
+    @include media(tablet){
+        width: auto;
+    }
+
+    &:hover{
+    	text-decoration: none;
+    	background-color: darken($brand-color, 10%);
+    }
+}
+
+
+/**
+ * Secondary
+ */
+
+.ola-btn-secondary{
+	background-color: white;
+	color: $brand-color;
+	line-height: 50px;
+	text-align: center;
+	box-shadow: 0 1px 2px 0px rgba(0,0,0, 0.2);
+
+	&:hover{
+		background-color: white;
+		color: $brand-color;
+	}
+}
+
+
+/**
+ * Disabled btn
+ */
+
+.ola-btn[disabled]{
+	background-color: #aaa;
+}
+
+
+/**
+ * Nav icon
+ */
+
+.ola-navicon{
+	background: url(../images/navicon.png) top left no-repeat;
+	width: 60px;
+	height: 60px;
+	background-size: cover;
+	display: block;
+	position: absolute;
+	right: 1em;
+	top: 3em;
+
+	@include media(tablet){
+		display: none;
+	}
+}
+
+	.ola-navicon-close{
+		z-index: 3;
+		background-image: url(../images/navicon-close.png);
+		position: fixed;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s ease-in;
+
+		.nav-is-open &{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+
+/**
+ * Lighter link
+ */
+
+.ola-link-lighter{
+	color: #fff;
+	text-decoration: underline;
+}

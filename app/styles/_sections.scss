@@ -1,0 +1,84 @@
+.ola-section{
+	padding: 1em 0;	
+}
+
+%section{
+	display: table;
+	@include media(desktop){
+		height: 100%;
+	}
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+%cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+/**
+ * Ola section header
+ */
+
+.ola-section-head{
+	background-color: $brand-color;
+	color: #fff;
+	@extend %section;
+	overflow: hidden;
+}
+
+
+/**
+ * Plain section
+ */
+
+.ola-section-white{
+	@extend %section;
+	table-layout: fixed;
+	max-width: 1100px;
+	margin: 0 auto;	
+
+	.container{
+		@extend %cell;
+	}
+}
+
+
+/**
+ * Green section
+ */
+
+.ola-section-green{	
+	background: $color-green;
+	color: #fff;
+	@extend %section;
+
+	@include media(desktop){
+		padding-top: 4em;
+	}
+}
+
+
+/**
+ * About section
+ */
+
+.ola-section-about{
+	@extend %section;
+	background: #f5f5f5;
+
+	.container-cell{
+		@extend %cell;
+	}
+}
+
+
+/**
+ * Footer
+ */
+
+.ola-section-footer{
+	text-align: center;
+}

@@ -1,0 +1,211 @@
+/**
+ * Forms
+ */
+$grey: #777;
+$border: #D6DBE5;
+$border-focus: #B25A00;
+$label-focus: #B25A00;
+
+%input-control{
+    border-style: solid;
+    border: none;
+    border-bottom: 1px $border solid;
+    padding: 0.5em 1em 0.5em 0;
+    width: 100%;
+    border-radius: 0;    
+    transition: border 0.2s ease-in;
+    box-sizing: border-box;
+
+    
+    
+    &:focus{
+        outline: none;
+        box-shadow: none;
+        border-color: $border-focus;        
+        //border-bottom-width: 2px;
+        //margin-bottom: -1px;
+    }
+}
+
+    .input-control{
+        @extend %input-control;
+        background: transparent;
+        z-index: 1;
+        position: relative;
+
+        &[disabled]{
+            border-bottom-style: dotted;
+            background: transparent;
+            
+        }
+    }
+
+    /**
+     * Placeholder
+     */
+    
+    .input-control::-webkit-input-placeholder {
+       color: $grey;       
+       opacity: 0.5;
+    }
+
+    /**
+     * Form control
+     */
+    
+    .form-control{
+        position: relative;
+        margin-top: 2em;    
+
+        .date-field{
+            margin-bottom: 0;
+        }
+
+        h2 + &{
+            margin-top: 0;
+        }
+        &.form-indent {
+            margin: 1em 20px;
+        }
+        &.form-max400 {
+            max-width: 400px;
+        }
+
+
+        textarea{
+            margin-bottom: 0;
+        }        
+    }
+
+    .table {
+        .form-control { margin-top: 0; }
+    }
+
+    /* Default  label */
+
+    .label-group{
+        font-weight: 600;
+        padding-bottom: 5px;
+    } 
+    
+    /**
+     * Label
+     */
+    .label-control{
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        color: $grey;
+        transition: all 0.4s cubic-bezier(.55,0,.1,1);
+        margin: 0;
+        transform-origin: 0 0;   
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;     
+    }
+
+    .label-small{
+        color: $grey;
+        font-size: 12px;
+    }
+
+    .label-stub{
+        position: absolute;
+        right: 0;
+        top: 6px;
+        color: $grey;
+    }
+    
+    
+
+    .label-active{
+
+        .label-control{
+            transform: translateY(-1.3em) scale(0.7);
+            color: $grey;
+            width: 140%;
+        }
+    }
+
+    .label-up{
+
+        .label-control{
+            transform: translateY(-1.3em) scale(0.7);
+            color: $label-focus;
+            width: 140%;
+        }
+    }
+
+    /**
+     * Has Value
+     */
+    
+    .has-value{
+        .label-control{
+            transform: translateY(-1.3em) scale(0.7);
+            color: $grey;
+        }
+    }
+
+    /**
+     * For older browsers
+     */
+    
+    .no-csstransforms{
+
+        .label-up{
+            .label-control{
+                font-size: 12px;
+                color: $label-focus;
+                top: -1.3em;
+            }
+        }
+
+        .label-blur{
+            .label-control{
+                color: $grey;
+            }
+        }
+    }
+
+    .label-blur{
+        .label-control{
+            color: $grey;
+        }
+    }
+
+
+/**
+ * Demo form
+ */
+
+.ola-demo-form{
+    max-width: 600px;
+    margin: 0 auto;
+
+    .submit-control{
+        text-align: center;
+    }    
+}
+
+
+/**
+ * Error
+ */
+
+.ola-form-error, .ola-form-success{
+    display: none;
+}
+
+.ola-error, .ola-success{
+    background-color: #ff4900;
+    display: block;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.ola-success{
+    background-color: $color-green;    
+}

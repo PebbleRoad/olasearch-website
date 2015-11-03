@@ -1,0 +1,59 @@
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal;
+}
+
+h1{
+	font-weight: 600;
+	font-size: 2em;
+	margin-bottom: 0em;
+
+	@include media(tablet){
+		margin-bottom: 1em;
+	}
+}
+
+
+h2{
+	font-weight: 100;
+	font-size: 2.25em;
+}
+
+h3{
+	font-size: 1.125em;
+	font-weight: 600;
+	margin-bottom: 0.25em;
+}
+
+/**
+ * Section header
+ */
+
+.ola-section-header{
+	text-align: center;
+	font-weight: 200;
+	margin-bottom: 0em;
+
+	@include media(tablet){
+		margin-bottom: 1em;
+	}
+}
+
+	/**
+	 * Tagline
+	 */
+	
+	.ola-section-tagline{
+		text-align: center;
+	}
+
+
+/**
+ * Value heading
+ */
+
+.ola-value-heading{
+	font-size: 1.5em;
+	font-weight: 600;
+	margin-bottom: 0.5em;
+	line-height: 1.2;
+}

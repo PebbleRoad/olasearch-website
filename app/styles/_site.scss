@@ -1,0 +1,343 @@
+/**
+ * Base
+ */
+
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font-family;
+    color: $base-color;
+    text-rendering: optimizeLegibility;
+}
+
+html, body{
+	height: 100%;
+}
+
+img{
+	max-width: 100%;
+	vertical-align: top;
+}
+
+/**
+ * Container
+ */
+
+.container{
+	padding-left: 1em;
+	padding-right: 1em;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+
+/**
+ * Logo
+ */
+
+.ola-logo{
+	margin-bottom: 2em;	
+	display: block;	
+
+	@include media(tablet){
+		margin-bottom: 3em;
+	}
+
+	img{
+		max-width: 100px;
+	}
+}
+
+/**
+ * Navigation
+ */
+
+.ola-nav{
+	
+	text-transform: uppercase;		
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right:0;
+	left: 0;
+	background-color: rgba($brand-color, 0.95);
+	z-index: 2;
+	font-size: 1.6em;
+	transition: all 0.2s ease-in;
+	visibility: hidden;
+	opacity: 0;
+
+	.nav-is-open &{
+		opacity: 1;
+		visibility: visible;
+	}
+		
+
+	@include media(tablet){
+		text-align: right;
+		display: block;
+		position: static;
+		background-color: transparent;
+		visibility: visible;
+		opacity: 1;
+		font-size: 1em;
+	}
+
+	a{
+		display: block;
+		padding: 16px;
+		color: #fff;
+		text-align: center;
+
+		@include media(tablet){
+			display: inline-block;			
+		}		
+		
+		&:hover, &:focus, &:active{
+			text-decoration: none;
+			background-color: white;
+			color: $brand-color;
+
+			@include media(tablet){
+				background: none;
+				color: white;
+			}
+		}
+	}
+}
+
+	/**
+	 * Nav wrapper
+	 */
+	
+	.ola-nav-wrap{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: translateY(-50%);
+
+		@include media(tablet){
+			position: static;
+			transform: none;
+		}
+	}
+
+/**
+ * Features
+ */
+
+.ola-features{
+	list-style: none;
+	margin-left: 0;
+	font-size: 0;
+	padding-top: 32px;
+
+	> li{
+		overflow: hidden;
+		padding-left: 96px;
+		margin: 0;
+		padding-bottom: 1em;
+		font-size: 1rem;
+
+		@include media(tablet){
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+			padding-right: 2em;
+			padding-left: 126px;
+			padding-bottom: 4em;
+		}
+	}
+
+	img{
+		float: left;
+		max-width: 80px;
+		margin-left: -96px;
+
+		@include media(tablet){
+			max-width: 110px;
+			margin-left: -126px;
+		}
+	}
+}
+
+
+	/**
+	 * Feature grid
+	 */
+	
+	.ola-features-grid{
+
+		> li{
+			padding: 0;
+			padding-bottom: 2em;
+
+			@include media(tablet){
+				display: inline-block;				
+				padding-right: 1em;								
+				width: 33.33%;
+			}
+
+			@include media(desktop){
+				width: 25%;
+			}
+		}
+
+		img{
+			float: none;
+			margin: 0;
+			max-width: 100%;
+			margin-bottom: 1em;
+		}
+	}
+
+
+/**
+ * Love search
+ */
+
+.ola-love-search{
+
+	.ola-love-text{
+		padding-bottom: 1em;
+	}
+
+	@include media(tablet){
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+
+		.ola-love-text, .ola-love-image{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.ola-love-text{
+			width: 400px;
+			padding-bottom: 0;
+		}
+
+		.ola-love-image{
+			position: relative;
+			height: 560px;
+			
+			img{
+				position: absolute;
+				width: 900px;
+				max-width: none;
+				left: 0;
+				top: 0;
+			}
+		}
+	}		
+}
+
+
+/**
+ * About list
+ */
+
+.ola-about-list{
+	list-style: none;
+	margin: 0 auto;
+	padding-top: 2em;
+	text-align: center;
+	max-width: 700px;
+	@include media(tablet){
+		// display: table;
+		// width: 700px;
+		// padding-top: 0;
+		// // text-align: left;
+		// margin: auto;
+	}
+
+	img{
+		display: block;
+		margin: auto;
+	}
+
+	> li{
+
+		padding-bottom: 2em;
+		margin: 0;
+		
+	}
+}
+
+
+/**
+ * When window is scrolled
+ */
+
+.menu-opened{
+
+	overflow: hidden;
+
+	.ola-nav{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right:0;
+		left: 0;
+		background-color: rgba($brand-color, 0.95);
+		z-index: 2;
+		font-size: 1.6em;		
+		visibility: visible;
+		opacity: 1;		
+		
+		a{
+			display: block;
+			padding: 16px;
+			color: #fff;
+			text-align: center;
+
+			&:hover{
+				background-color: white;
+				color: $brand-color;
+			}
+		}
+	}	
+
+	/**
+	 * Nav wrapper
+	 */
+	
+	.ola-nav-wrap{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: translateY(-50%);
+	}
+
+	.ola-navicon-close{
+		opacity: 1;
+		visibility: visible;
+		display: block;
+		z-index: 4;
+	}
+}
+
+
+/**
+ * When body is scrolled
+ */
+
+.has-scrolled{
+
+	@include media(tablet){
+
+		.ola-navicon-open{
+			opacity: 1;
+			top: 1em;
+			visibility: visible;
+			display: block;
+			position: fixed;
+			background-color: $brand-color;
+			color: #fff;
+		}
+
+		.ola-navicon-close{
+			top: 1em;
+		}
+	}
+}
